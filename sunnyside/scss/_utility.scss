@@ -1,0 +1,122 @@
+.hide{
+    display: none;
+}
+
+.fadein{
+    animation: fadeIn 200ms ease-in-out forwards;
+}
+
+.fadeout{
+    animation: fadeOut 200ms ease-in-out forwards;
+}
+
+
+.open--1{
+    position: relative;
+    margin-right: 2.5rem;
+    & span{
+          position: absolute;
+        &:first-child{
+            animation: ham--1 300ms ease forwards;
+            transform: rotate(50deg);
+        }
+        &:nth-child(2){
+           opacity: 0;
+        }
+    }
+}
+
+.open--2{
+    position: relative;
+    margin-right: 2.5rem;
+    & span{
+          position: absolute;
+        &:last-child{
+            animation: ham--2 300ms ease forwards;
+            transform: rotate(-50deg);
+        }
+    }
+}
+
+@keyframes ham--1 {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(12.5deg);
+    }
+    50%{
+        transform: rotate(25deg);
+    }
+    75%{
+        transform: rotate(37.5deg);
+    }
+    50%{
+        transform: rotate(50deg);
+    }
+}
+@keyframes ham--2 {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(-12.5deg);
+    }
+    50%{
+        transform: rotate(-25deg);
+    }
+    75%{
+        transform: rotate(-37.5deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+}
+
+@keyframes ham--open {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 2.8rem;
+    }
+}
+
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    25%{
+       opacity: .25;
+    }
+    50%{
+       opacity: .5;
+    }
+    75%{
+       opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    25%{
+       opacity: .75;
+    }
+    50%{
+       opacity: .5;
+    }
+    75%{
+       opacity: .25;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
